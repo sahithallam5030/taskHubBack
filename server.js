@@ -6,7 +6,8 @@ const jwt=require('jsonwebtoken');
 const cors=require('cors');
 require('dotenv').config();
 app.use(exp.json());
-app.use(cors())
+app.use(cors({
+    origin:"https://taskhub-omega.vercel.app/"}));
 const mclient=require('mongodb').MongoClient;
 mclient.connect(process.env.DATABASE_URL)
 .then((client)=>{
